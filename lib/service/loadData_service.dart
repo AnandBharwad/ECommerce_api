@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 class LoaddataService {
   Future<List<dynamic>> loadProduct() async {
     final jsonString = await rootBundle.loadString("assets/products.json");
+
     return jsonDecode(jsonString);
   }
 
@@ -42,6 +43,8 @@ class LoaddataService {
     }
   }
 }
+
+
 /*
 import 'dart:convert';
 import 'package:http/http.dart' as http;

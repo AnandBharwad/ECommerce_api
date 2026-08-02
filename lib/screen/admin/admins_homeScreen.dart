@@ -4,6 +4,7 @@ import 'package:ecommerce_self_project/model/ecommerce_model.dart';
 import 'package:ecommerce_self_project/screen/admin/admin_add_product.dart';
 import 'package:ecommerce_self_project/screen/admin/admin_update_product.dart';
 import 'package:ecommerce_self_project/screen/product_display.dart';
+import 'package:ecommerce_self_project/screen/user/user_mainScreen.dart';
 import 'package:ecommerce_self_project/service/loadData_service.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -99,66 +100,140 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Admin")),
+      appBar: AppBar(
+        title: Text(
+          "Admin",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.deepPurple,
+      ),
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Row(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              spacing: 9,
               children: [
-                ElevatedButton(
-                  onPressed: _isUploading
-                      ? null
-                      : () async {
-                          setState(() {
-                            _isUploading = true;
-                          });
-                          try {
-                            await LoaddataService().seedDatabase();
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  "Default data uploaded successfully!",
+                Container(
+                  height: 38,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: Colors.green.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    spacing: 6,
+
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.upload, color: Colors.green),
+                      TextButton(
+                        onPressed: _isUploading
+                            ? null
+                            : () async {
+                                setState(() {
+                                  _isUploading = true;
+                                });
+                                try {
+                                  await LoaddataService().seedDatabase();
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        "Default data uploaded successfully!",
+                                      ),
+                                    ),
+                                  );
+                                } catch (e) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text("Failed to upload: $e"),
+                                    ),
+                                  );
+                                } finally {
+                                  setState(() {
+                                    _isUploading = false;
+                                  });
+                                  _refreshRecords();
+                                }
+                              },
+                        child: _isUploading
+                            ? const SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 3,
                                 ),
+                              )
+                            : Text(
+                                "Upload Default Data",
+                                style: TextStyle(color: Colors.blueGrey),
                               ),
-                            );
-                          } catch (e) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text("Failed to upload: $e")),
-                            );
-                          } finally {
-                            setState(() {
-                              _isUploading = false;
-                            });
-                            _refreshRecords();
-                          }
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 38,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    spacing: 6,
+
+                    children: [
+                      Icon(Icons.navigate_next, color: Colors.purple),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UserMainscreen(),
+                            ),
+                          );
                         },
-                  child: _isUploading
-                      ? const SizedBox(
-                          height: 20,
-                          width: 20,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : Text("Upload Default Data"),
+                        child: Text(
+                          "Navigate to usescreen",
+                          style: TextStyle(
+                            color: Colors.blueGrey,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => ProductDisplay()),
-                    );
-                  },
-                  child: Text("Navigate to use screen"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AddProduct()),
-                    );
-                  },
-                  child: Text("Add New Product"),
+                Container(
+                  height: 38,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    spacing: 6,
+                    children: [
+                      Icon(Icons.add, color: Colors.blueGrey),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddProduct(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Add New Product",
+                          style: TextStyle(color: Colors.blueGrey),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
 
                 // ElevatedButton(

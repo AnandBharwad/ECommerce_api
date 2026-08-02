@@ -1,42 +1,26 @@
-import 'package:ecommerce_self_project/screen/admin/admins_homeScreen.dart';
-import 'package:ecommerce_self_project/screen/user/bottomnavScreen.dart';
-import 'package:ecommerce_self_project/screen/user/user_mainScreen.dart';
+import 'package:ecommerce_self_project/screen/login%20&%20registration/loginScreen.dart';
 import 'package:ecommerce_self_project/service/shared_preferences_service.dart';
 import 'package:flutter/material.dart';
 
-class Loginscreen extends StatefulWidget {
-  const Loginscreen({super.key});
+class Registrationscreen extends StatefulWidget {
+  const Registrationscreen({super.key});
 
   @override
-  State<Loginscreen> createState() => _Loginscreen();
+  State<Registrationscreen> createState() => _Registrationscreen();
 }
 
-class _Loginscreen extends State<Loginscreen> {
+class _Registrationscreen extends State<Registrationscreen> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+
   bool see = false;
-  bool loginAsAdmin = true;
-
-  void changeLoginUser() {
-    setState(() {
-      loginAsAdmin = !loginAsAdmin;
-    });
-  }
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple,
       body: Center(
         child: Container(
-          height: 520,
+          height: 500,
           width: 400,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -47,26 +31,14 @@ class _Loginscreen extends State<Loginscreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Login",
+                  "Register Info",
                   style: TextStyle(
                     color: Colors.deepPurple,
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-
-                Card(
-                  elevation: 2.5,
-                  child: TextButton(
-                    onPressed: () {
-                      changeLoginUser();
-                    },
-                    child: loginAsAdmin ? Text("As Admin") : Text("As User"),
-                  ),
-                ),
-                Text("Click to change", style: TextStyle(fontSize: 10)),
                 SizedBox(height: 45),
-
                 Padding(
                   padding: const EdgeInsets.all(10),
                   child: TextField(
@@ -89,6 +61,7 @@ class _Loginscreen extends State<Loginscreen> {
                   padding: const EdgeInsets.all(10.0),
                   child: TextField(
                     controller: _passwordController,
+
                     obscureText: see,
                     obscuringCharacter: "*",
                     decoration: InputDecoration(
@@ -115,11 +88,30 @@ class _Loginscreen extends State<Loginscreen> {
                     ),
                   ),
                 ),
-
+                Align(
+                  alignment: AlignmentGeometry.centerEnd,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.green,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Loginscreen(),
+                          ),
+                        );
+                      },
+                      child: Text("Already Logged-In"),
+                    ),
+                  ),
+                ),
                 SizedBox(height: 30),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepPurpleAccent.withOpacity(0.36),
+                    backgroundColor: Colors.deepPurple.withOpacity(0.36),
                     foregroundColor: Colors.white,
                     fixedSize: Size(160, 40),
                     elevation: 6,
@@ -131,49 +123,22 @@ class _Loginscreen extends State<Loginscreen> {
                     ),
                   ),
                   onPressed: () async {
-                    final service = SharedPreferencesService();
-                    final String inputName = _emailController.text.trim();
-                    final String inputPassword = _passwordController.text
-                        .trim();
+                      SharedPreferencesService service =
+                          SharedPreferencesService();
 
-                    String? expectedName;
-                    String? expectedPassword;
+                      await service.saveData(
+                        _emailController.text.toString(),
+                        _passwordController.text.toString(),
+                      );
 
-                    if (loginAsAdmin) {
-                      final (adminName, adminPassword) = await service
-                          .getAdminData();
-                      expectedName = adminName;
-                      expectedPassword = adminPassword;
-                    } else {
-                      expectedName = await service.getUserName();
-                      expectedPassword = await service.getPassword();
-                    }
-
-                    if (inputName == expectedName &&
-                        inputPassword == expectedPassword) {
                       await service.saveLogin(true);
-
-                      // if (!mounted) return;
 
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(
-                          builder: (_) => loginAsAdmin
-                              ? const AdminHomeScreen() // Opens Admin Panel
-                              : const Bottomnavscreen(), // Opens User Panel
-                        ),
+                        MaterialPageRoute(builder: (_) => Loginscreen()),
                       );
-                    } else {
-                      // if (!mounted) return;
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text("Invalid Username or Password"),
-                          backgroundColor: Colors.redAccent,
-                        ),
-                      );
-                    }
                   },
-                  child: Text("Login"),
+                  child: Text("Sign Up"),
                 ),
               ],
             ),

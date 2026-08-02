@@ -78,10 +78,11 @@ class _AdminUpdateProductState extends State<AdminUpdateProduct> {
     }
   }
 
-  InputDecoration inputDecoration(String label, String hint) {
+  InputDecoration inputDecoration(String label, String hint, IconData icon) {
     return InputDecoration(
       labelText: label,
       hintText: hint,
+      icon: Icon(icon, color: Colors.deepPurple),
       border: const OutlineInputBorder(),
       enabledBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.black, width: 1.5),
@@ -92,7 +93,13 @@ class _AdminUpdateProductState extends State<AdminUpdateProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Update Product")),
+      appBar: AppBar(
+        title: const Text(
+          "Update Product",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.deepPurple,
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(12),
         child: Form(
@@ -104,6 +111,7 @@ class _AdminUpdateProductState extends State<AdminUpdateProduct> {
                 decoration: inputDecoration(
                   "Product Name",
                   "Enter Product Name",
+                  Icons.shopping_basket,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -118,7 +126,11 @@ class _AdminUpdateProductState extends State<AdminUpdateProduct> {
               TextFormField(
                 controller: _productPrice,
                 keyboardType: TextInputType.number,
-                decoration: inputDecoration("Price", "Enter Product Price"),
+                decoration: inputDecoration(
+                  "Price",
+                  "Enter Product Price",
+                  Icons.currency_rupee_sharp,
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please enter price";
@@ -140,6 +152,7 @@ class _AdminUpdateProductState extends State<AdminUpdateProduct> {
                 decoration: inputDecoration(
                   "Description",
                   "Enter Product Description",
+                  Icons.description,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -156,6 +169,7 @@ class _AdminUpdateProductState extends State<AdminUpdateProduct> {
                 decoration: inputDecoration(
                   "Image URL",
                   "Enter Product Image URL",
+                  Icons.link,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -172,7 +186,11 @@ class _AdminUpdateProductState extends State<AdminUpdateProduct> {
                 keyboardType: const TextInputType.numberWithOptions(
                   decimal: true,
                 ),
-                decoration: inputDecoration("Rating", "Enter Product Rating"),
+                decoration: inputDecoration(
+                  "Rating",
+                  "Enter Product Rating",
+                  Icons.star,
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please enter rating";
@@ -193,6 +211,7 @@ class _AdminUpdateProductState extends State<AdminUpdateProduct> {
                 decoration: inputDecoration(
                   "Category",
                   "Enter Product Category",
+                  Icons.category,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {

@@ -21,6 +21,22 @@ class SharedPreferencesService {
     await prefs.setString("password", password);
   }
 
+  Future<void> saveAdminData() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    await prefs.setString("adminName", "admin");
+    await prefs.setString("adminPassword", "admin123");
+  }
+
+  Future<(String?, String?)> getAdminData() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    String? admin = prefs.getString("adminName");
+    String? password = prefs.getString("adminPassword");
+
+    return (admin, password);
+  }
+
   Future<String?> getUserName() async {
     final prefs = await SharedPreferences.getInstance();
 

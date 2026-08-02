@@ -49,28 +49,31 @@ class _AddProductState extends State<AddProduct> {
     print(response.body);
 
     if (response.statusCode == 201) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(
-        
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
           backgroundColor: Colors.green,
-        content: Text("Product Added Successfully")));
+          content: Text("Product Added Successfully"),
+        ),
+      );
 
       Navigator.pop(context, true);
     } else {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(
-        
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
           backgroundColor: Colors.redAccent,
-        content: Text("Failde to Add Product")));
+          content: Text("Failde to Add Product"),
+        ),
+      );
     }
   }
 
-  InputDecoration inputDecoration(String label, String hint) {
+  InputDecoration inputDecoration(String label, String hint, IconData icon) {
     return InputDecoration(
       labelText: label,
       hintText: hint,
+      prefixIcon: Icon(icon, color: Colors.deepPurple),
+      filled: true,
+      fillColor: Colors.grey[300],
       border: OutlineInputBorder(),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: Colors.black, width: 1.5),
@@ -81,18 +84,26 @@ class _AddProductState extends State<AddProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:  Text("Add Product")),
+      appBar: AppBar(
+        title: Text(
+          "Add Product",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.deepPurple,
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(12),
         child: Form(
           key: _formKey,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               TextFormField(
                 controller: _productName,
                 decoration: inputDecoration(
                   "Product Name",
                   "Enter Product Name",
+                  Icons.shopping_basket,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -102,12 +113,16 @@ class _AddProductState extends State<AddProduct> {
                 },
               ),
 
-               SizedBox(height: 12),
+              SizedBox(height: 12),
 
               TextFormField(
                 controller: _productPrice,
                 keyboardType: TextInputType.number,
-                decoration: inputDecoration("Price", "Enter Product Price"),
+                decoration: inputDecoration(
+                  "Price",
+                  "Enter Product Price",
+                  Icons.currency_rupee_sharp,
+                ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
                     return "Please enter product price";
@@ -129,6 +144,7 @@ class _AddProductState extends State<AddProduct> {
                 decoration: inputDecoration(
                   "Description",
                   "Enter Product Description",
+                  Icons.description,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -145,6 +161,7 @@ class _AddProductState extends State<AddProduct> {
                 decoration: inputDecoration(
                   "Image URL",
                   "Enter Product Image URL",
+                  Icons.link,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -161,7 +178,11 @@ class _AddProductState extends State<AddProduct> {
                 keyboardType: const TextInputType.numberWithOptions(
                   decimal: true,
                 ),
-                decoration: inputDecoration("Rating", "Enter Product Rating"),
+                decoration: inputDecoration(
+                  "Rating",
+                  "Enter Product Rating",
+                  Icons.star,
+                ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
                     return "Please enter rating";
@@ -182,6 +203,7 @@ class _AddProductState extends State<AddProduct> {
                 decoration: inputDecoration(
                   "Category",
                   "Enter Product Category",
+                  Icons.category,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
