@@ -28,13 +28,18 @@ class _AddProductState extends State<AddProduct> {
     _productImageUrl.dispose();
     _productRating.dispose();
     _productCategory.dispose();
+
     super.dispose();
   }
 
   Future<void> addProduct() async {
     final response = await http.post(
-      Uri.parse("https://6a44f2a5aab3faec3f69164c.mockapi.io/api/studentData"),
-      headers: {"Content-Type": "application/json"},
+      Uri.parse(
+        "https://6a44f2a5aab3faec3f69164c.mockapi.io/api/studentData",
+      ),
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: jsonEncode({
         "name": _productName.text,
         "price": int.parse(_productPrice.text),
@@ -51,8 +56,8 @@ class _AddProductState extends State<AddProduct> {
     if (response.statusCode == 201) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          backgroundColor: Colors.green,
-          content: Text("Product Added Successfully"),
+          backgroundColor: Theme.of(context).colorScheme.secondary,
+          content: const Text("Product Added Successfully"),
         ),
       );
 
@@ -60,68 +65,135 @@ class _AddProductState extends State<AddProduct> {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          backgroundColor: Colors.redAccent,
-          content: Text("Failde to Add Product"),
+          backgroundColor: Theme.of(context).colorScheme.primary,
+          content: const Text("Failed to Add Product"),
         ),
       );
     }
   }
 
-  InputDecoration inputDecoration(String label, String hint, IconData icon) {
+  InputDecoration inputDecoration(
+    String label,
+    String hint,
+    IconData icon,
+  ) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return InputDecoration(
       labelText: label,
       hintText: hint,
-      prefixIcon: Icon(icon, color: Colors.deepPurple),
+
+      prefixIcon: Icon(
+        icon,
+        color: colorScheme.secondary,
+      ),
+
       filled: true,
-      fillColor: Colors.grey[300],
-      border: OutlineInputBorder(),
+      fillColor: colorScheme.surfaceContainer,
+
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(14),
+        borderSide: BorderSide.none,
+      ),
+
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.black, width: 1.5),
+        borderRadius: BorderRadius.circular(14),
+        borderSide: BorderSide.none,
+      ),
+
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(14),
+        borderSide: BorderSide(
+          color: colorScheme.primary,
+          width: 1.5,
+        ),
+      ),
+
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(14),
+        borderSide: BorderSide(
+          color: colorScheme.primary,
+          width: 1,
+        ),
+      ),
+
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(14),
+        borderSide: BorderSide(
+          color: colorScheme.primary,
+          width: 1.5,
+        ),
+      ),
+
+      labelStyle: TextStyle(
+        color: colorScheme.onSurface,
+      ),
+
+      hintStyle: TextStyle(
+        color: colorScheme.onSurface.withValues(alpha: 0.5),
+      ),
+
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 16,
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
+      backgroundColor: colorScheme.surface,
+
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Add Product",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: colorScheme.primary,
+        foregroundColor: colorScheme.onPrimary,
+        elevation: 0,
+        scrolledUnderElevation: 0,
       ),
+
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              // Product Name
               TextFormField(
                 controller: _productName,
                 decoration: inputDecoration(
                   "Product Name",
                   "Enter Product Name",
-                  Icons.shopping_basket,
+                  Icons.shopping_basket_outlined,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
                     return "Please enter product name";
                   }
+
                   return null;
                 },
               ),
 
-              SizedBox(height: 12),
+              const SizedBox(height: 14),
 
+              // Product Price
               TextFormField(
                 controller: _productPrice,
                 keyboardType: TextInputType.number,
                 decoration: inputDecoration(
                   "Price",
                   "Enter Product Price",
-                  Icons.currency_rupee_sharp,
+                  Icons.currency_rupee,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -136,26 +208,29 @@ class _AddProductState extends State<AddProduct> {
                 },
               ),
 
-              const SizedBox(height: 12),
+              const SizedBox(height: 14),
 
+              // Product Description
               TextFormField(
                 controller: _productDescription,
                 maxLines: 3,
                 decoration: inputDecoration(
                   "Description",
                   "Enter Product Description",
-                  Icons.description,
+                  Icons.description_outlined,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
                     return "Please enter description";
                   }
+
                   return null;
                 },
               ),
 
-              const SizedBox(height: 12),
+              const SizedBox(height: 14),
 
+              // Product Image URL
               TextFormField(
                 controller: _productImageUrl,
                 decoration: inputDecoration(
@@ -167,12 +242,14 @@ class _AddProductState extends State<AddProduct> {
                   if (value == null || value.trim().isEmpty) {
                     return "Please enter image URL";
                   }
+
                   return null;
                 },
               ),
 
-              const SizedBox(height: 12),
+              const SizedBox(height: 14),
 
+              // Product Rating
               TextFormField(
                 controller: _productRating,
                 keyboardType: const TextInputType.numberWithOptions(
@@ -181,7 +258,7 @@ class _AddProductState extends State<AddProduct> {
                 decoration: inputDecoration(
                   "Rating",
                   "Enter Product Rating",
-                  Icons.star,
+                  Icons.star_outline,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -196,14 +273,15 @@ class _AddProductState extends State<AddProduct> {
                 },
               ),
 
-              const SizedBox(height: 12),
+              const SizedBox(height: 14),
 
+              // Product Category
               TextFormField(
                 controller: _productCategory,
                 decoration: inputDecoration(
                   "Category",
                   "Enter Product Category",
-                  Icons.category,
+                  Icons.category_outlined,
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -214,17 +292,33 @@ class _AddProductState extends State<AddProduct> {
                 },
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
 
+              // Add Product Button
               SizedBox(
                 width: double.infinity,
+                height: 52,
                 child: ElevatedButton(
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       await addProduct();
                     }
                   },
-                  child: const Text("Add Product"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: colorScheme.primary,
+                    foregroundColor: colorScheme.onPrimary,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                  ),
+                  child: const Text(
+                    "Add Product",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               ),
             ],

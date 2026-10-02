@@ -14,16 +14,19 @@ class _Registrationscreen extends State<Registrationscreen> {
   TextEditingController _passwordController = TextEditingController();
 
   bool see = false;
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: theme.colorScheme.surface,
       body: Center(
         child: Container(
           height: 500,
           width: 400,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceContainer,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Center(
@@ -33,7 +36,7 @@ class _Registrationscreen extends State<Registrationscreen> {
                 Text(
                   "Register Info",
                   style: TextStyle(
-                    color: Colors.deepPurple,
+                    color: theme.colorScheme.onSurface,
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
                   ),
@@ -111,8 +114,9 @@ class _Registrationscreen extends State<Registrationscreen> {
                 SizedBox(height: 30),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepPurple.withOpacity(0.36),
-                    foregroundColor: Colors.white,
+                    backgroundColor: theme.colorScheme.primary,
+
+                    foregroundColor: theme.colorScheme.onPrimary,
                     fixedSize: Size(160, 40),
                     elevation: 6,
                     shadowColor: Colors.black,
@@ -123,20 +127,20 @@ class _Registrationscreen extends State<Registrationscreen> {
                     ),
                   ),
                   onPressed: () async {
-                      SharedPreferencesService service =
-                          SharedPreferencesService();
+                    SharedPreferencesService service =
+                        SharedPreferencesService();
 
-                      await service.saveData(
-                        _emailController.text.toString(),
-                        _passwordController.text.toString(),
-                      );
+                    await service.saveData(
+                      _emailController.text.toString(),
+                      _passwordController.text.toString(),
+                    );
 
-                      await service.saveLogin(true);
+                    await service.saveLogin(true);
 
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (_) => Loginscreen()),
-                      );
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (_) => Loginscreen()),
+                    );
                   },
                   child: Text("Sign Up"),
                 ),

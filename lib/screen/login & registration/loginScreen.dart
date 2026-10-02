@@ -32,14 +32,16 @@ class _Loginscreen extends State<Loginscreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: theme.colorScheme.surface,
       body: Center(
         child: Container(
           height: 520,
           width: 400,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceContainer,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Center(
@@ -49,7 +51,7 @@ class _Loginscreen extends State<Loginscreen> {
                 Text(
                   "Login",
                   style: TextStyle(
-                    color: Colors.deepPurple,
+                    color: theme.colorScheme.onSurface,
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
                   ),
@@ -119,7 +121,9 @@ class _Loginscreen extends State<Loginscreen> {
                 SizedBox(height: 30),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepPurpleAccent.withOpacity(0.36),
+                    backgroundColor: theme.colorScheme.primary.withOpacity(
+                      0.88,
+                    ),
                     foregroundColor: Colors.white,
                     fixedSize: Size(160, 40),
                     elevation: 6,

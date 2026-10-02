@@ -1,0 +1,497 @@
+[
+  {
+    "name": "Apple iPhone 16",
+    "price": 45199,
+    "description": "Apple iPhone 16 offering reliable performance, premium build quality and excellent value.",
+    "rating": 4.3,
+    "category": "Smartphones"
+  },
+  {
+    "name": "Samsung Galaxy S25",
+    "price": 69399,
+    "description": "Samsung Galaxy S25 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,
+    "rating": 4.1,
+    "category": "Smartphones"
+  },
+  {
+    "name": "Google Pixel 10",
+    "price": 106299,
+    "description": "Google Pixel 10 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.8,
+    "category": "Smartphones"
+  },
+  {
+    "name": "OnePlus 13",
+    "price": 63099,
+    "description": "OnePlus 13 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.1,
+    "category": "Smartphones"
+  },
+  {
+    "name": "Xiaomi 15",
+    "price": 5099,
+    "description": "Xiaomi 15 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 5.0,
+    "category": "Smartphones"
+  },
+  {
+    "name": "Nothing Phone 3",
+    "price": 94799,
+    "description": "Nothing Phone 3 offering reliable performance, premium build quality and excellent value.",
+"imageUrl":  ,    "rating": 3.9,
+    "category": "Smartphones"
+  },
+  {
+    "name": "Motorola Edge 60",
+    "price": 54199,
+    "description": "Motorola Edge 60 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.6,
+    "category": "Smartphones"
+  },
+  {
+    "name": "Vivo X200",
+    "price": 93299,
+    "description": "Vivo X200 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.5,
+    "category": "Smartphones"
+  },
+  {
+    "name": "Oppo Find X9",
+    "price": 2099,
+    "description": "Oppo Find X9 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.0,
+    "category": "Smartphones"
+  },
+  {
+    "name": "Realme GT 8",
+    "price": 4299,
+    "description": "Realme GT 8 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.7,
+    "category": "Smartphones"
+  },
+  {
+    "name": "MacBook Air M4",
+    "price": 56199,
+    "description": "MacBook Air M4 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.3,
+    "category": "Laptops"
+  },
+  {
+    "name": "Dell XPS 14",
+    "price": 57299,
+    "description": "Dell XPS 14 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.7,
+    "category": "Laptops"
+  },
+  {
+    "name": "HP Spectre x360",
+    "price": 72199,
+    "description": "HP Spectre x360 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.8,
+    "category": "Laptops"
+  },
+  {
+    "name": "Lenovo Yoga 9i",
+    "price": 39199,
+    "description": "Lenovo Yoga 9i offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.7,
+    "category": "Laptops"
+  },
+  {
+    "name": "Asus Zenbook 14",
+    "price": 48799,
+    "description": "Asus Zenbook 14 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.9,
+    "category": "Laptops"
+  },
+  {
+    "name": "Acer Swift Go",
+    "price": 95899,
+    "description": "Acer Swift Go offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.0,
+    "category": "Laptops"
+  },
+  {
+    "name": "MSI Prestige 16",
+    "price": 54599,
+    "description": "MSI Prestige 16 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.8,
+    "category": "Laptops"
+  },
+  {
+    "name": "Samsung Galaxy Book5",
+    "price": 30099,
+    "description": "Samsung Galaxy Book5 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 5.0,
+    "category": "Laptops"
+  },
+  {
+    "name": "LG Gram 16",
+    "price": 22499,
+    "description": "LG Gram 16 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.6,
+    "category": "Laptops"
+  },
+  {
+    "name": "Microsoft Surface Laptop",
+    "price": 45199,
+    "description": "Microsoft Surface Laptop offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.0,
+    "category": "Laptops"
+  },
+  {
+    "name": "Sony WH-1000XM6",
+    "price": 72699,
+    "description": "Sony WH-1000XM6 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.6,
+    "category": "Headphones"
+  },
+  {
+    "name": "Bose QC Ultra",
+    "price": 115899,
+    "description": "Bose QC Ultra offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.0,
+    "category": "Headphones"
+  },
+  {
+    "name": "JBL Tune 770NC",
+    "price": 122699,
+    "description": "JBL Tune 770NC offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.5,
+    "category": "Headphones"
+  },
+  {
+    "name": "Apple AirPods Pro 2",
+    "price": 32999,
+    "description": "Apple AirPods Pro 2 offering reliable performance, premium build quality and excellent value.",
+    "imageUrl": "https://picsum.photos/seed/product24/600/600",
+    "rating": 4.9,
+    "category": "Headphones"
+  },
+  {
+    "name": "Nothing Ear",
+    "price": 25999,
+    "description": "Nothing Ear offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.2,
+    "category": "Headphones"
+  },
+  {
+    "name": "Samsung Buds 3 Pro",
+    "price": 43399,
+    "description": "Samsung Buds 3 Pro offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.1,
+    "category": "Headphones"
+  },
+  {
+    "name": "Boat Nirvana",
+    "price": 48199,
+    "description": "Boat Nirvana offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.9,
+    "category": "Headphones"
+  },
+  {
+    "name": "Sennheiser Momentum 4",
+    "price": 16499,
+    "description": "Sennheiser Momentum 4 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.8,
+    "category": "Headphones"
+  },
+  {
+    "name": "Anker Soundcore Q45",
+    "price": 107699,
+    "description": "Anker Soundcore Q45 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.4,
+    "category": "Headphones"
+  },
+  {
+    "name": "Skullcandy Crusher",
+    "price": 76499,
+    "description": "Skullcandy Crusher offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.9,
+    "category": "Headphones"
+  },
+  {
+    "name": "Apple Watch Series 11",
+    "price": 40599,
+    "description": "Apple Watch Series 11 offering reliable performance, premium build quality and excellent value.",
+    "imageUrl": "https://picsum.photos/seed/product31/600/600",
+    "rating": 3.8,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "Samsung Galaxy Watch 8",
+    "price": 75199,
+    "description": "Samsung Galaxy Watch 8 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.8,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "Pixel Watch 4",
+    "price": 15599,
+    "description": "Pixel Watch 4 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.8,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "OnePlus Watch 3",
+    "price": 54799,
+    "description": "OnePlus Watch 3 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.9,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "Garmin Venu 3",
+    "price": 80799,
+    "description": "Garmin Venu 3 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.6,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "Amazfit Balance",
+    "price": 67899,
+    "description": "Amazfit Balance offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.9,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "Noise ColorFit Pro",
+    "price": 72899,
+    "description": "Noise ColorFit Pro offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.9,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "Fire-Boltt Vision",
+    "price": 76499,
+    "description": "Fire-Boltt Vision offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.9,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "Fitbit Sense 3",
+    "price": 64199,
+    "description": "Fitbit Sense 3 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.2,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "Huawei Watch GT",
+    "price": 24199,
+    "description": "Huawei Watch GT offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.4,
+    "category": "Smartwatches"
+  },
+  {
+    "name": "Logitech MX Master 3S",
+    "price": 47099,
+    "description": "Logitech MX Master 3S offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.0,
+    "category": "Accessories"
+  },
+  {
+    "name": "Logitech MX Keys",
+    "price": 64199,
+    "description": "Logitech MX Keys offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.9,
+    "category": "Accessories"
+  },
+  {
+    "name": "Anker 65W Charger",
+    "price": 107099,
+    "description": "Anker 65W Charger offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.8,
+    "category": "Accessories"
+  },
+  {
+    "name": "Samsung 10000mAh Power Bank",
+    "price": 25499,
+    "description": "Samsung 10000mAh Power Bank offering reliable performance, premium build quality and excellent value.",
+    "imageUrl": "https://picsum.photos/seed/product44/600/600",
+    "rating": 4.4,
+    "category": "Accessories"
+  },
+  {
+    "name": "Apple MagSafe Charger",
+    "price": 100999,
+    "description": "Apple MagSafe Charger offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.2,
+    "category": "Accessories"
+  },
+  {
+    "name": "SanDisk Extreme SSD",
+    "price": 118899,
+    "description": "SanDisk Extreme SSD offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.8,
+    "category": "Accessories"
+  },
+  {
+    "name": "Kingston USB 128GB",
+    "price": 32499,
+    "description": "Kingston USB 128GB offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.0,
+    "category": "Accessories"
+  },
+  {
+    "name": "TP-Link Archer Router",
+    "price": 14399,
+    "description": "TP-Link Archer Router offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.8,
+    "category": "Accessories"
+  },
+  {
+    "name": "Portronics Mouse",
+    "price": 70799,
+    "description": "Portronics Mouse offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.9,
+    "category": "Accessories"
+  },
+  {
+    "name": "Amazon Echo Dot",
+    "price": 22899,
+    "description": "Amazon Echo Dot offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.8,
+    "category": "Accessories"
+  },
+  {
+    "name": "PlayStation 5 Slim",
+    "price": 85999,
+    "description": "PlayStation 5 Slim offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.7,
+    "category": "Gaming"
+  },
+  {
+    "name": "Xbox Series X",
+    "price": 64399,
+    "description": "Xbox Series X offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.4,
+    "category": "Gaming"
+  },
+  {
+    "name": "Nintendo Switch OLED",
+    "price": 73899,
+    "description": "Nintendo Switch OLED offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 5.0,
+    "category": "Gaming"
+  },
+  {
+    "name": "Razer DeathAdder V3",
+    "price": 14299,
+    "description": "Razer DeathAdder V3 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.9,
+    "category": "Gaming"
+  },
+  {
+    "name": "SteelSeries Apex Pro",
+    "price": 2499,
+    "description": "SteelSeries Apex Pro offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.6,
+    "category": "Gaming"
+  },
+  {
+    "name": "HyperX Cloud III",
+    "price": 125299,
+    "description": "HyperX Cloud III offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.0,
+    "category": "Gaming"
+  },
+  {
+    "name": "Logitech G Pro X",
+    "price": 129099,
+    "description": "Logitech G Pro X offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.3,
+    "category": "Gaming"
+  },
+  {
+    "name": "Asus ROG Ally",
+    "price": 92899,
+    "description": "Asus ROG Ally offering reliable performance, premium build quality and excellent value.",
+    "imageUrl": "https://picsum.photos/seed/product58/600/600",
+    "rating": 3.9,
+    "category": "Gaming"
+  },
+  {
+    "name": "Steam Deck OLED",
+    "price": 82699,
+    "description": "Steam Deck OLED offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.3,
+    "category": "Gaming"
+  },
+  {
+    "name": "Redragon K552",
+    "price": 81699,
+    "description": "Redragon K552 offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.4,
+    "category": "Gaming"
+  },
+  {
+    "name": "Dyson V15 Vacuum",
+    "price": 128999,
+    "description": "Dyson V15 Vacuum offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.9,
+    "category": "Home Appliances"
+  },
+  {
+    "name": "Philips Air Fryer",
+    "price": 107699,
+    "description": "Philips Air Fryer offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.9,
+    "category": "Home Appliances"
+  },
+  {
+    "name": "Prestige Induction Cooktop",
+    "price": 23599,
+    "description": "Prestige Induction Cooktop offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.9,
+    "category": "Home Appliances"
+  },
+  {
+    "name": "Havells Kettle",
+    "price": 128399,
+    "description": "Havells Kettle offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.6,
+    "category": "Home Appliances"
+  },
+  {
+    "name": "LG Microwave",
+    "price": 40099,
+    "description": "LG Microwave offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 3.9,
+    "category": "Home Appliances"
+  },
+  {
+    "name": "Samsung Refrigerator",
+    "price": 44099,
+    "description": "Samsung Refrigerator offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 5.0,
+    "category": "Home Appliances"
+  },
+  {
+    "name": "IFB Washing Machine",
+    "price": 113499,
+    "description": "IFB Washing Machine offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.2,
+    "category": "Home Appliances"
+  },
+  {
+    "name": "Kent RO Purifier",
+    "price": 80399,
+    "description": "Kent RO Purifier offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.7,
+    "category": "Home Appliances"
+  },
+  {
+    "name": "Mi Robot Vacuum",
+    "price": 122299,
+    "description": "Mi Robot Vacuum offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.3,
+    "category": "Home Appliances"
+  },
+  {
+    "name": "Voltas Air Cooler",
+    "price": 100299,
+    "description": "Voltas Air Cooler offering reliable performance, premium build quality and excellent value.",
+"imageUrl": ,    "rating": 4.2,
+    "category": "Home Appliances"
+  }
+]

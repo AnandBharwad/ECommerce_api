@@ -9,6 +9,7 @@ import 'package:ecommerce_self_project/screen/user/user_categoryScreen.dart';
 import 'package:ecommerce_self_project/screen/user/user_mainScreen.dart';
 import 'package:ecommerce_self_project/screen/user/user_profileScreen.dart';
 import 'package:ecommerce_self_project/service/shared_preferences_service.dart';
+import 'package:ecommerce_self_project/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +24,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "e-commerce",
       debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+
       home: Registrationscreen(),
     );
   }

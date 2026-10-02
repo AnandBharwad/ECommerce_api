@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart';
 
@@ -14,7 +15,7 @@ class LoaddataService {
 
     // Map each product to an http.post Future
     final uploadFutures = products.map((product) {
-      return http.post(
+      return http.post( 
         Uri.parse(
           "https://6a44f2a5aab3faec3f69164c.mockapi.io/api/studentData",
         ),
@@ -25,7 +26,7 @@ class LoaddataService {
 
     // Wait for all upload futures to complete in parallel
     await Future.wait(uploadFutures);
-    print("All products are uploaded");
+    stdout.write("All products are uploaded");
   }
 
   Future<void> seedDatabase() async {
